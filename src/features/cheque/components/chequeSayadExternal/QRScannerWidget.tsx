@@ -11,9 +11,13 @@ const QRScannerWidget = () => {
 
   // Result
   const [scannedResult, setScannedResult] = useState<string | undefined>("");
+  const [data, setData] = useState<any>('')
+  const [success, setSuccess] = useState<any>('')
 
   // Success
   const onScanSuccess = (result: QrScanner.ScanResult) => {
+    setSuccess('success')
+    setData(result)
     // 🖨 Print the "result" to browser console.
     console.log(result);
     // ✅ Handle success.
@@ -24,6 +28,7 @@ const QRScannerWidget = () => {
   // Fail
   const onScanFail = (err: string | Error) => {
     // 🖨 Print the "err" to browser console.
+    setSuccess('fail')
     console.log(err);
   };
 
@@ -71,6 +76,8 @@ const QRScannerWidget = () => {
   return (
     <div className="qr-reader">
       <p> hi</p>
+      <p> data: {data}</p>
+      <p> success: {success}</p>
       {/* QR */}
       <video ref={videoEl}></video>
       <div ref={qrBoxEl} className="qr-box">
