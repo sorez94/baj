@@ -1,0 +1,116 @@
+
+.wrapper {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+          radial-gradient(1200px 800px at 100% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
+          radial-gradient(1000px 700px at -10% 110%, rgba(0, 200, 255, 0.12), transparent 60%),
+          var(--bg);
+  color: var(--fg);
+}
+
+.card {
+  width: min(680px, 100%);
+  background: var(--card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: clamp(1.25rem, 2.5vw + 1rem, 2rem);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18%;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: .75rem;
+  line-height: 1;
+  padding: .45rem .6rem;
+  border-radius: 999px;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+}
+
+.title {
+  font-size: clamp(1.25rem, 1.4rem + 1vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin-top: .5rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.grid {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.section {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.hintList {
+  display: grid;
+  gap: .5rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.hintList li {
+  list-style: "•  ";
+  padding-left: .25rem;
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg);
+  padding: .7rem 1rem;
+  border-radius: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+}
+
+.button:hover { transform: translateY(-1px); }
+.button:active { transform: translateY(0); }
+
+.primary {
+  background: linear-gradient(180deg, var(--primary), color-mix(in lab, var(--primary) 65%, black));
+  border-color: transparent;
+  color: white;
+}
+
+.subtle { opacity: .85; }

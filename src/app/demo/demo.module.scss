@@ -1,0 +1,515 @@
+// Demo Page SCSS Module
+// Simple color system with comprehensive theming
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-card) 0%, var(--color-border) 100%);
+  padding: var(--spacing-8) 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Theme Toggle
+.themeToggle {
+  position: fixed;
+  top: var(--spacing-6);
+  left: var(--spacing-6);
+  z-index: 1000;
+}
+
+.themeButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  font-size: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-primary-text);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+// Background Pattern
+.backgroundPattern {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  filter: blur(40px);
+  opacity: 0.2;
+  animation: blob 7s infinite;
+}
+
+.blob1 {
+  top: -160px;
+  right: -160px;
+  background: var(--color-primary);
+  animation-delay: 0s;
+}
+
+.blob2 {
+  bottom: -160px;
+  left: -160px;
+  background: var(--color-secondary);
+  animation-delay: 2s;
+}
+
+.blob3 {
+  top: 160px;
+  left: 160px;
+  background: var(--color-primary);
+  animation-delay: 4s;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+// Content Wrapper
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+  position: relative;
+  z-index: 10;
+}
+
+// Header Section
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+  padding: var(--spacing-8) var(--spacing-6);
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.headerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  margin-bottom: var(--spacing-6);
+  box-shadow: var(--shadow-lg);
+  
+  span {
+    font-size: 40px;
+    color: var(--color-primary-text);
+  }
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-8);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-8) auto;
+  line-height: 1.6;
+}
+
+.statusIndicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  
+  span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+}
+
+.statusDot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.statusDivider {
+  width: 1px;
+  height: 16px;
+  background: var(--color-border);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+// Demo Grid
+.demoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-12);
+}
+
+.demoCard {
+  display: block;
+  padding: var(--spacing-8);
+  background: var(--color-card);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  transition: all 0.5s ease;
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+    background: var(--color-card);
+  }
+  
+  &:active {
+    transform: translateY(-8px);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.cardGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.demoCard:hover .cardGradient {
+  opacity: 0.1;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 10;
+}
+
+.cardIcon {
+  font-size: 56px;
+  margin-bottom: var(--spacing-6);
+  transition: transform 0.3s ease;
+}
+
+.demoCard:hover .cardIcon {
+  transform: scale(1.1);
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+  transition: color 0.3s ease;
+}
+
+.demoCard:hover .cardTitle {
+  color: var(--color-primary);
+}
+
+.cardDescription {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.demoCard:hover .cardDescription {
+  color: var(--color-text-primary);
+}
+
+.cardArrow {
+  position: absolute;
+  top: var(--spacing-6);
+  left: var(--spacing-6);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(8px);
+  
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-primary-text);
+    border-radius: 50%;
+    font-size: var(--font-size-sm);
+  }
+}
+
+.demoCard:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// Info Sections
+.infoSections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.infoCard {
+  background: var(--color-card);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(8px);
+}
+
+.infoTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.infoIcon {
+  font-size: 40px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.infoColumn {
+  text-align: right;
+}
+
+.infoSubtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.infoSubIcon {
+  font-size: 24px;
+}
+
+.infoList {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  
+  li {
+    margin-bottom: var(--spacing-3);
+    position: relative;
+    padding-right: var(--spacing-6);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.quickStart {
+  text-align: center;
+}
+
+.quickStartText {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-6);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+// Submenu styles
+.subMenu {
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.subMenuTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-3);
+  text-align: center;
+}
+
+.subMenuItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.subMenuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-background);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-text);
+    border-color: var(--color-primary);
+  }
+}
+
+.subMenuIcon {
+  font-size: var(--font-size-sm);
+}
+
+.subMenuText {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+// Quick start indicators
+.quickStartIndicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.bounceDot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4) 0;
+  }
+  
+  .contentWrapper {
+    padding: 0 var(--spacing-4);
+  }
+  
+  .header {
+    padding: var(--spacing-6) var(--spacing-4);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .demoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .demoCard {
+    padding: var(--spacing-6);
+  }
+  
+  .infoCard {
+    padding: var(--spacing-6);
+  }
+  
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .themeToggle {
+    top: var(--spacing-4);
+    left: var(--spacing-4);
+  }
+} 
