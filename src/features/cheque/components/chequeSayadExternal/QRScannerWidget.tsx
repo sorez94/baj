@@ -17,9 +17,9 @@ const QRScannerWidget = () => {
   // Success
   const onScanSuccess = (result: QrScanner.ScanResult) => {
     setSuccess('success')
-    setData(result)
+    setData(result?.data)
     // 🖨 Print the "result" to browser console.
-    console.log(result);
+    console.log(result?.data);
     // ✅ Handle success.
     // 😎 You can do whatever you want with the scanned result.
     setScannedResult(result?.data);
