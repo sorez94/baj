@@ -1,0 +1,190 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.title {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-2);
+}
+
+.boxBaseStyle {
+  width: 100%;
+  height: 78px;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+
+
+  &:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-surface-hover);
+
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.iconContainerStyle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--color-text-secondary);
+}
+
+.fileCard {
+  display: flex;
+  align-items: center;
+  height: 78px;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  border: 1px solid var(--color-outline);
+  user-select: none;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressCircle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.progressSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progressBackground {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 3;
+}
+
+.progressBar {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.progressIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+}
+
+.loadingSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-surface-variant);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  flex: 1;
+}
+
+.fileName {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.fileMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.fileSize {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.separator {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.fileDateTime {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-family: 'Courier New', monospace; // Monospace for better alignment
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imagePreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.fileTypeIcon {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.fileTypeText {
+  color: white;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.errorText {
+  color: var(--color-error);
+  font-size: 12px;
+  margin-top: var(--spacing-1);
+}

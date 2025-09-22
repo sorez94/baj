@@ -1,0 +1,63 @@
+.confirmContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  margin: auto
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inputContainer {
+  width: 100%;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  align-items: center;
+}
+
+.check {
+  margin: 16px 0
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto; // کل بخش inputs وسط قرار می‌گیره
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 87vh; /* Ensures the page takes full height */
+}
+
+.pageContent {
+  flex-grow: 1; /* This makes the content section grow and take up the remaining space */
+  overflow-y: auto; /* Allow scrolling in case of overflow content */
+}
+
+.actionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  justify-content: space-between;
+  margin-top: var(--spacing-2);
+  margin-bottom: 24px; /* Optional: Add margin to space buttons from the bottom */
+}
+
+.actionButton {
+  flex: 1;
+}

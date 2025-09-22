@@ -1,0 +1,35 @@
+/* ChequeConfirmScreenRejectCheque.module.scss */
+
+/* Container for Reject Reasons */
+.rejectReasonsContainer {
+  direction: rtl;
+  text-align: right;
+  font-family: inherit;
+}
+
+/* Title style */
+.title {
+  margin: var(--spacing-1) var(--spacing-1) var(--spacing-2) var(--spacing-1);
+}
+
+/* List style */
+.rejectList {
+  padding-right: 20px;
+  margin: 0;
+}
+
+/* List item style */
+.rejectListItem {
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-primary);
+}
+
+/* Card style */
+.card {
+  width: 100%;
+}
+
+/* Modal Styles (You can add more if necessary) */
+.modal {
+  /* Add modal related styles if needed */
+}

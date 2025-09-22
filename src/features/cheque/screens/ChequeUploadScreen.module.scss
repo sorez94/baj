@@ -1,0 +1,66 @@
+.uploadContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 88dvh;
+    transition: all 0.2s ease;
+}
+
+.uploadCotent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    flex: 1;
+}
+
+.headerHelperText {
+  color: var(--color-text-secondary);
+}
+
+.uploadSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.sectionTitle {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.notesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+}
+
+.bulletStyle {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.errorContainer {
+  padding: var(--spacing-3);
+  background-color: var(--color-error-container);
+  border: 1px solid var(--color-error);
+  border-radius: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+.errorText {
+  color: var(--color-error);
+  text-align: center;
+}
+
+.actionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  justify-content: space-between;
+  margin-top: var(--spacing-2);
+  
+}
+
+.actionButton {
+  flex: 1;
+}

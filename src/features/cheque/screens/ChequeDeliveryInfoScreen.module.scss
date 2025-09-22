@@ -1,0 +1,26 @@
+.deliveryContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 160px);
+}
+
+.actionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  justify-content: space-between;
+  margin-top: var(--spacing-2);
+}
+
+.actionButton {
+  flex: 1;
+}
+
+.infoList {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.infoListItem {
+  margin-bottom: 8px;
+}
