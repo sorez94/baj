@@ -1,0 +1,88 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-4);
+}
+
+.modal {
+  background-color: var(--color-modal-background);
+  border-radius: 16px;
+  padding: var(--spacing-6);
+  max-width: 320px;
+  width: 100%;
+  min-height: 216px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.title {
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.body {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-1);
+  margin-top: var(--spacing-2);
+  justify-content: flex-end;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-yekan-regular);
+  color: var(--color-primary) !important;
+
+  &:hover {
+    color: var(--color-text-button-primary) !important;
+  }
+}
+
+.primaryAction {
+  color: var(--color-primary);
+}
+
+.secondaryAction {
+  color: var(--color-primary);
+}
+
+.actionButton:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.actionButton:active {
+  background-color: var(--color-surface-active);
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

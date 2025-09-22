@@ -1,0 +1,55 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.expectedChequeImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.textWrapper {
+  position: absolute;
+  left: 0;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+.textImage {
+  width: fit-content;
+  padding: 0 7px;
+  border-radius: 4px;
+}
+
+/* --- Desktop (>= 1024px) --- */
+.dueDate { top: 10%; width: 86%; }
+.dueDateString { top: 18%; width: 82%; }
+.amountString { top: 30%; width: 75%; }
+.beneficiaryName { top: 42%; width: 92%; }
+.beneficiaryId { top: 42%; width: 40%; }
+.amount { top: 62%; width: 43%; }
+
+/* --- Tablet (600px - 1023px) --- */
+@media (max-width: 1023px) and (min-width: 601px) {
+  .dueDate { top: 8%; width: 87%; }
+  .dueDateString { top: 15%; width: 83%; }
+  .amountString { top: 26%; width: 76%; }
+  .beneficiaryName { top: 38%; width: 90%; }
+  .beneficiaryId { top: 38%; width: 42%; }
+  .amount { top: 58%; width: 44%; }
+}
+
+/* --- Mobile (<= 600px) --- */
+@media (max-width: 600px) {
+  .dueDate { top: 5%; width: 88%; }
+  .dueDateString { top: 12%; width: 82%; }
+  .amountString { top: 23%; width: 78%; }
+  .beneficiaryName { top: 35%; width: 92%; }
+  .beneficiaryId { top: 35%; width: 44%; }
+  .amount { top: 53%; width: 45%; }
+}

@@ -1,0 +1,216 @@
+// Input Demo SCSS Module
+// Simple color system with RTL support
+
+.container {
+  min-height: 100vh;
+  background: var(--color-background);
+  padding: var(--spacing-8) 0;
+  position: relative;
+}
+
+// Header Section
+.header {
+  background: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-8) 0;
+  margin-bottom: var(--spacing-12);
+  position: relative;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.themeToggle {
+  position: absolute;
+  top: var(--spacing-6);
+  left: var(--spacing-6);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  font-size: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-primary-text);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+// Content
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+// Sections
+.section {
+  margin-bottom: var(--spacing-16);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+  }
+}
+
+// Input Grid
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+}
+
+// Input Groups
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.inputLabel {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-align: right;
+}
+
+// Form Example
+.formExample {
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4) 0;
+  }
+  
+  .header {
+    padding: var(--spacing-6) 0;
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .headerContent {
+    padding: 0 var(--spacing-4);
+  }
+  
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .themeToggle {
+    top: var(--spacing-4);
+    left: var(--spacing-4);
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .content {
+    padding: 0 var(--spacing-4);
+  }
+  
+  .section {
+    margin-bottom: var(--spacing-12);
+  }
+  
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .inputGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .formExample {
+    padding: var(--spacing-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .inputGrid {
+    gap: var(--spacing-4);
+  }
+  
+  .formExample {
+    padding: var(--spacing-4);
+  }
+} 

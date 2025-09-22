@@ -1,0 +1,83 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  overflow: auto;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2 var(--spacing-4));
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: right;
+  border-radius: var(--spacing-1) !important;
+  height: 56px !important;
+  
+  &:hover {
+    background-color: var(--color-surface-hover);
+    .title {
+      color: inherit;
+    }
+  }
+  
+  &:active {
+    background-color: var(--color-surface-active);
+  }
+  
+  // &:not(:last-child) {
+  //   border-bottom: 1px solid var(--color-border);
+  // }
+
+
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.title {
+  flex: 1;
+}
+
+
+/* Custom scrollbar for the list */
+.list {
+  overflow-y: auto;
+
+  /* Webkit browsers */
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: var(--color-surface-variant, #f0f0f0);
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-primary-20, #c7d0e0);
+    border-radius: 8px;
+    min-height: 24px;
+    transition: background 0.2s;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-40, #5b7bb2);
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-20, #c7d0e0) var(--color-surface-variant, #f0f0f0);
+}
+
+

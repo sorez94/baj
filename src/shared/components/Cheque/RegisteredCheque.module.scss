@@ -1,0 +1,27 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.expectedChequeImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.textWrapper {
+  position: absolute;
+  left: 0;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+.textImage {
+  width: fit-content;
+  padding: 0 7px;
+  border-radius: 4px;
+}

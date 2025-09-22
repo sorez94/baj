@@ -1,0 +1,185 @@
+// Bajet PWA Theme System - Simple Color Palette
+// Essential colors based on Material Design 3
+
+:root {
+  // ===== SIMPLE COLOR SYSTEM =====
+  
+  // Background Colors
+  --color-background: #FFFFFF;
+  --color-background-dark: #1A1C20;
+  
+  // Card/Surface Colors
+  --color-card: #FFFFFF;
+  --color-card-dark: #2F3033;
+  
+  // Border Colors
+  --color-border: #C4C8D0;
+  --color-border-dark: #45474F;
+  --color-border-disabled: #A8A8AA;
+  
+  // Primary Colors (Blue from filled buttons)
+  --color-primary: #2D5DA7;
+  --color-primary-dark: #ABC7FF;
+
+  --color-primary-hover: #3562a6;
+  --color-primary-hover-dark: #9fbdf9;
+  
+  --color-primary-pressed: #008DB2;
+  
+  // Secondary Colors (Green/Yellow from tonal buttons)
+  --color-secondary: #E7F48A;
+  --color-secondary-dark: #434B00;
+
+  --color-secondary-hover: #D4E157;
+  --color-secondary-hover-dark: #434B00;
+
+  --color-secondary-pressed: #F4FAB3;
+  --color-secondary-text: #1A1C00;
+  
+  // Text Colors
+  --color-text-primary: #1A1C1F;
+  --color-text-secondary: #45474F;
+  --color-text-disabled: #8F9099;
+  
+  --color-text-primary-dark: #FFFFFF;
+  --color-text-secondary-dark: #C4C7D0;
+
+
+  // button
+
+  --color-text-button-primary: #FFFFFF;
+  --color-text-button-primary-dark: #002F66;
+
+  --color-text-button-secondary: #2D5DA7;
+  --color-text-button-secondary-dark: #ABC7FF;
+
+  --color-text-button-tertiary: #1A1C00;
+  --color-text-button-tertiary-dark: #E7F48A;
+  
+  // input 
+  --color-input-primary : #2D5DA7;
+  --color-input-primary-dark : #ABC7FF;
+
+  --color-input-border-primary : #74797F;
+  --color-input-border-primary-dark : #ABC7FF;
+
+  --color-input-secondary : #E0E4EC;
+  --color-input-secondary-dark : #44474E;
+
+  --color-input-error : #FF0000;
+  --color-input-error-dark : #FF0000;
+
+  // State Colors
+  --color-success: #006C44;
+  --color-success-dark: #34D399;
+  --color-success-alpha: rgba(16, 185, 129, 0.2);
+  
+  --color-warning: #FFDF91;
+  --color-warning-dark: #FBBF24;
+  --color-warning-alpha: rgba(245, 158, 11, 0.2);
+  
+  --color-error: #BA1A1A;
+  --color-error-dark: #F87171;
+  --color-error-alpha: rgba(239, 68, 68, 0.2);
+  
+  --color-primary-alpha: rgba(45, 93, 167, 0.2);
+
+  // modal
+  --color-modal-background: #E6EAF5;
+  --color-modal-background-dark: #2F3033;
+
+  // snackbar
+  --color-snackbar-background: #303133;
+  --color-snackbar-background-dark: #b1b0b0;
+
+  
+  // Disabled/Outline Colors
+  --color-disabled: hsla(228, 9%, 11%, 0.12);
+  --color-outline: #8F9099;
+  
+  // ===== SPACING =====
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  
+  // ===== TYPOGRAPHY =====
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --letter-spacing-wide: 0.025em;
+  
+  // ===== COMPONENT SIZES =====
+  --button-height-sm: 32px;
+  --button-height-md: 40px;
+  --button-height-lg: 48px;
+  
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-button: 20px;
+  
+  // ===== SHADOWS =====
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  // ===== CONTAINER =====
+   --container_size : 900px
+}
+
+// ===== DARK MODE =====
+[data-theme="dark"] {
+  --color-background: var(--color-background-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-card: var(--color-card-dark);
+  --color-border: var(--color-border-dark);
+  --color-text-primary: var(--color-text-primary-dark);
+  --color-text-secondary: var(--color-text-secondary-dark);
+  --color-disabled: hsla(255, 4%, 78%, 0.12);
+
+  --color-primary-hover: var(--color-primary-hover-dark);
+  --color-secondary-hover: var(--color-secondary-hover-dark);
+
+  --color-primary: var(--color-primary-dark);
+
+  --color-text-button-primary: var(--color-text-button-primary-dark);
+  --color-text-button-secondary: var(--color-text-button-secondary-dark);
+  --color-text-button-tertiary: var(--color-text-button-tertiary-dark);
+
+  // input
+  --color-input-primary : var(--color-input-primary-dark);
+  --color-input-secondary : var(--color-input-secondary-dark);
+  --color-input-error : var(--color-input-error-dark);
+  
+  // State colors for dark mode
+  --color-success: var(--color-success-dark);
+  --color-warning: var(--color-warning-dark);
+  --color-error: var(--color-error-dark);
+
+  // modal
+  --color-modal-background: var(--color-modal-background-dark);
+  --color-snackbar-background: var(--color-snackbar-background-dark);
+}
+
+
+
+

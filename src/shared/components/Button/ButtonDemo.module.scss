@@ -1,0 +1,202 @@
+// Button Demo SCSS Module
+// Simple color system matching Material Design 3
+
+.container {
+  min-height: 100vh;
+  background: var(--color-background);
+  padding: var(--spacing-8);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+  
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: var(--spacing-4);
+    }
+  }
+  
+  h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+  }
+}
+
+.buttonGrid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.variantRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+//   background: var(--color-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+}
+
+.variantLabel {
+  min-width: 140px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-align: right;
+  
+  @media (max-width: 768px) {
+    min-width: auto;
+    text-align: left;
+  }
+}
+
+.buttonStates {
+  display: flex;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    gap: var(--spacing-2);
+  }
+}
+
+.demoButton {
+  min-width: 120px;
+  height: 40px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  
+  // Ensure consistent button sizing
+  padding: var(--spacing-2) var(--spacing-4) !important;
+  min-height: 40px !important;
+  
+  // RTL icon positioning
+  .MuiButton-startIcon {
+    margin-right: 0 !important;
+    margin-left: var(--spacing-2) !important;
+  }
+  
+  // Loading state styling
+  &[data-loading="true"] {
+    cursor: not-allowed;
+    opacity: 0.8;
+    
+    // Ensure loading spinner is visible
+    .MuiButton-startIcon {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  }
+}
+
+.themeToggle {
+  min-width: 80px;
+  height: 36px;
+  font-size: var(--font-size-sm);
+  
+  // RTL icon positioning
+  .MuiButton-startIcon {
+    margin-right: 0 !important;
+    margin-left: var(--spacing-2) !important;
+  }
+}
+
+// Icon section styling
+.iconSection {
+  margin-top: var(--spacing-12);
+  text-align: center;
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-8);
+  }
+}
+
+.iconButtonGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-6);
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.iconButtonExample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.iconButtonLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.iconButton {
+  // Icon buttons will automatically become circular
+  // No additional styling needed here
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+  
+  .header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .demoButton {
+    min-width: 100px;
+    height: 36px;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonStates {
+    justify-content: center;
+  }
+  
+  .demoButton {
+    min-width: 90px;
+    height: 32px;
+  }
+} 
