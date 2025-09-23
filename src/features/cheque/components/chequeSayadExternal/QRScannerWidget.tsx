@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import "./QRScannerWidget.module.scss";
 import QrScanner from "qr-scanner";
 
-const QRScannerWidget = () => {
+type QRScannerWidgetProps = {
+  onScan?: (result: string) => void; // 👈 add prop
+};
+
+const QRScannerWidget =({ onScan }: QRScannerWidgetProps) => {
   // QR States
   const scanner = useRef<QrScanner>(null);
   const videoEl = useRef<HTMLVideoElement>(null);
@@ -16,12 +20,10 @@ const QRScannerWidget = () => {
 
   // Success
   const onScanSuccess = (result: QrScanner.ScanResult) => {
+    onScan?.(result?.data);
     setSuccess('success')
     setData(result?.data)
-    // 🖨 Print the "result" to browser console.
     console.log(result?.data);
-    // ✅ Handle success.
-    // 😎 You can do whatever you want with the scanned result.
     setScannedResult(result?.data);
   };
 
@@ -75,10 +77,11 @@ const QRScannerWidget = () => {
 
   return (
     <div className="qr-reader">
-      <p> hi</p>
-      <p> data: {data}</p>
-      <p> success: {success}</p>
-      {/* QR */}
+      {data && (
+        <p>
+          data Result: {data}
+        </p>
+      )}
       <video ref={videoEl}></video>
       <div ref={qrBoxEl} className="qr-box">
         {!videoEl?.current && (
@@ -91,8 +94,6 @@ const QRScannerWidget = () => {
           />
         )}
       </div>
-
-      {/* Show Data Result if scan is success */}
       {scannedResult && (
         <p
           style={{
