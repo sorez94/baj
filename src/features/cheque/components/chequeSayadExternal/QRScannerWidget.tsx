@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./QRScannerWidget.module.scss";
+import styles from "@/features/cheque/components/chequeSayadExternal/QRScannerWidget.module.scss";
 import QrScanner from "qr-scanner";
 
 type QRScannerWidgetProps = {
@@ -76,21 +76,19 @@ const QRScannerWidget =({ onScan }: QRScannerWidgetProps) => {
   }, [qrOn]);
 
   return (
-    <div className="qr-reader">
+    <div className={styles.qrReader}>
       {data && (
         <p>
           data Result: {data}
         </p>
       )}
       <video ref={videoEl}></video>
-      <div ref={qrBoxEl} className="qr-box">
+      <div ref={qrBoxEl} className={styles.qrBox}>
         {!videoEl?.current && (
           <img
             src="/assets/images/icons/ui/barcode.svg"
             alt="Qr Frame"
-            width={256}
-            height={256}
-            className="qr-frame"
+            className={styles.qrFrame}
           />
         )}
       </div>
