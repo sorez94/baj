@@ -19,6 +19,7 @@ import ChequeExternalInquiryScreen from "@/features/cheque/screens/ChequeExterna
 import ChequeConfirmScreen from "@/features/cheque/screens/ChequeConfirmScreen";
 import ChequeSayadExternal from "@/features/cheque/screens/ChequeSayadExternal";
 import ChequeCheckbooksScreen from "./ChequeCheckbooksScreen";
+import ChequeBarcodeScanner from "@/features/cheque/screens/ChequeBarcodeScanner";
 
 // Main Cheque Screen Component
 const ChequeMainScreen: React.FC = () => {
@@ -45,7 +46,7 @@ const ChequeMainScreen: React.FC = () => {
   const renderCurrentScreen = () => {
     switch (screen) {
       case 'chequeStartScreen':
-        return <ChequeStartScreen/>;
+        return <ChequeBarcodeScanner/>;
       case 'chequeAccountsScreen':
         return <ChequeAccountsScreen/>;
       case 'chequeCheckbooksScreen':
